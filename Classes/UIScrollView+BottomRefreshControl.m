@@ -142,6 +142,12 @@ const CGFloat kMinRefershTime = 0.5;
     [self brc_swizzleMethod:@selector(setContentInset:) withMethod:@selector(brc_setContentInset:)];
     [self brc_swizzleMethod:@selector(contentInset) withMethod:@selector(brc_contentInset)];
     [self brc_swizzleMethod:@selector(setContentOffset:) withMethod:@selector(brc_setContentOffset:)];
+	[self brc_swizzleMethod:@selector(dealloc) withMethod:@selector(brc_dealloc)];
+}
+
+- (void)brc_dealloc {
+	[self brc_dealloc];
+	[[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)brc_didMoveToSuperview {
