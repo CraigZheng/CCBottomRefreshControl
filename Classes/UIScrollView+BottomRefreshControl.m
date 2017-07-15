@@ -116,7 +116,7 @@ static char kTriggerVerticalOffsetKey;
 @property (nonatomic) BOOL wasTracking;
 @property (nonatomic) NSDate *beginRefreshingDate;
 
-@property (nonatomic, weak) UITableView *fakeTableView;
+@property (nonatomic, strong) UITableView *fakeTableView;
 
 @end
 
